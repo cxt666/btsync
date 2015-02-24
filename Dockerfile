@@ -26,7 +26,7 @@ RUN /bin/bash -c "echo -e '\
       \"use_upnp\" : true, \n \
       \"webui\" : \n \
       { \n \
-        \"directory_root\" : \"/btsync\", \n \
+        \"directory_root\" : \"/btshare\", \n \
         \"listen\" : \"0.0.0.0:8888\" \n \
       } \n \
    }'" > /btshare/btsync.conf
