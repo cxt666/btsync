@@ -13,18 +13,18 @@ This Dockerfile derived from andryyy/btsync with some modifications (Thanks Andr
 Howto
 -----
 
-- Create the host directory, which will be used to store the data (for example: `mkdir /var/btsync`)
-- Set the user permissions to UID 1999 (for example: `chown 9991:9991 -R /var/btsync`)
+- Create the host directory, which will be used to store the data (for example: `mkdir /var/btshare`)
+- Set the user permissions to UID 1999 (for example: `chown 9991:9991 -R /var/btshare`)
 - Pull the image (for example: `docker.io pull cxt666/btsync`)
 - Launch the container
-  - On your local network, you should also use UDP (for example: `docker.io run -d -p 8888:8888 -p 8889:8889 -p 3838:3838/udp -p 3000:3000/udp -v /var/btsync:/btshare/data cxt666/btsync`)
-  - If there are no BT Sync peers in the local network, you may leave the UDP ports: (for example: `docker.io run -d -p 8888:8888 -p 8889:8889 -v /var/btsync:/btshare/data cxt666/btsync`)
+  - On your local network, you should also use UDP (for example: `docker.io run -d -p 8888:8888 -p 36999:36999 -p 3838:3838/udp -p 3000:3000/udp -v /var/btsync:/btshare/data cxt666/btsync`)
+  - If there are no BT Sync peers in the local network, you may leave the UDP ports: (for example: `docker.io run -d -p 8888:8888 -p 36999:36999 -v /var/btsync:/btshare/data cxt666/btsync`)
 
 Overview
 --------
 
-	/var/btsync     : host directory for data
-	/btshare/data   : container directory for data
+	/var/btshare    : host directory for data
+	/btsync/data    : container directory for data
 	1999            : UID for btsync user inside the container
 	:8888           : Web UI Port
 	:8889           : Connections Port
@@ -33,5 +33,5 @@ Overview
 
 Possible commands to Launch: 
 
-	docker.io run -d -p 8888:8888 -p 8889:8889 -v /var/btsync:/btshare/data cxt666/btsync
-	docker.io run -d -p 8888:8888 -p 8889:8889 -p 3838:3838/udp -p 3000:3000/udp -v /var/btsync:/btshare/data btsync
+	docker.io run -d -p 36999:36999 -p 8889:8889 -v /var/btsync:/btshare/data cxt666/btsync
+	docker.io run -d -p 36999:36999 -p 8889:8889 -p 3838:3838/udp -p 3000:3000/udp -v /var/btsync:/btshare/data cxt666/btsync
