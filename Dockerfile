@@ -11,7 +11,7 @@ FROM ubuntu:14.04
 # Command to launch:
 #    docker.io run -d -p 8888:8888 -p 8889:8889 -p 3838:3838/udp -p 3000:3000/udp -v /var/btshare:/btsync/data btsync
 
-MAINTAINER mathias@menzer.net
+MAINTAINER cxt666 <root@menzer.net>
 
 RUN apt-get update -y && apt-get install -y \
   wget
